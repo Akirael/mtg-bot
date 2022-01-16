@@ -5,8 +5,12 @@ namespace App\Presenter;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Card\Card;
 use App\Repository\Card\CardRepository;
+use App\Component\Check\CheckLanguage;
 use DateTime;
 
+/**
+ * Класс собирающий данные о стоимости карты и предоставляющий их отображение.
+ */
 class CardPricePresenter
 {
     protected ManagerRegistry $doctrine;
@@ -18,9 +22,14 @@ class CardPricePresenter
         $this->repository = $doctrine->getRepository(Card::class);
     }
 
+    /**
+     * @param string $cardName
+     * @param object $platform
+     * @return array
+     */
     public function getPriceByPlatform(string $cardName, object $platform): array
     {
-        $lang = $this->checkLanguageName($cardName);
+        $lang = (new CheckLanguage())->check($cardName);
         $data = $this->repository->getPriceByPlatform($cardName, $platform, $lang);
         $result = [];
         foreach ($data as $row) {
@@ -42,10 +51,5 @@ class CardPricePresenter
         }
 
         return $result;
-    }
-
-    private function checkLanguageName(string $name): string
-    {
-        return preg_match('/[a-zA-Z \,\.]/', $name) ? 'en' : 'ru';
     }
 }
