@@ -2,15 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\Card\Card;
 use App\Entity\CardPrice\StarCityPrice;
 use App\Entity\CardPrice\TopDeckLastAuctionPrice;
 use App\Entity\CardPrice\TopDeckUserMinPrice;
-use App\Repository\Card\CardRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Presenter\CardPricePresenter;

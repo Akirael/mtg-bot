@@ -105,4 +105,24 @@ abstract class Price
      * @ORM\Column(type="integer")
      */
     private int $price_foil;
+
+    /**
+     * @param array $data
+     */
+    public function __construct(array $data)
+    {
+        $this->update($data);
+    }
+
+    /**
+     * @param array $data
+     * @return void
+     */
+    public function update(array $data)
+    {
+        $this->setTsUpdate(time());
+        $this->setCardId($data['card_id']);
+        $this->setPrice($data['price']);
+        $this->setPriceFoil($data['price_foil']);
+    }
 }

@@ -12,11 +12,10 @@
 Своих открытых и описанных api у них нет, но некоторые точки входа я нашёл и разобрался как с ними работать.
 
 Получение списка карт сета и цен происходит тут:
-1. [Star City. Обычные](https://starcitygames.com/previews/innistrad-crimson-vow/foil?rarity=Mythic%20Rare,Rare&mpp=300)
-2. [Star City. Foil](https://starcitygames.com/previews/innistrad-crimson-vow/?rarity=Mythic%20Rare,Rare&mpp=300)
-3. [Получение русского названия](https://gatherer.wizards.com/Pages/Search/Default.aspx?name=+)
-4. [TopDeck. Синглы](https://topdeck.ru/apps/toptrade/api-v1/singles/search?q=Dark+Ritual)
-5. [TopDeck. Завершённые аукционы](https://topdeck.ru/apps/toptrade/api-v1/auctions/search?q=Jace)
+1. [Star City](https://ajax.starcitygames.com/getDiscrepancies/541101)
+2. [Получение русского названия](https://gatherer.wizards.com/Pages/Search/Default.aspx?name=+)
+3. [TopDeck. Синглы](https://topdeck.ru/apps/toptrade/api-v1/singles/search?q=Dark+Ritual)
+4. [TopDeck. Завершённые аукционы](https://topdeck.ru/apps/toptrade/api-v1/auctions/search?q=Jace)
 
 С первой платформы получение данных происходит в полуавтоматическом режиме, так как ссылка зависит от названия сета (блок карт).
 Обновление цен будет происходить по крону.

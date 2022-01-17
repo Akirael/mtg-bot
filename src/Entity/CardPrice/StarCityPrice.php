@@ -29,4 +29,22 @@ class StarCityPrice extends Price
     {
         $this->url = $url;
     }
+
+    /**
+     * @param array $data
+     */
+    public function __construct(array $data)
+    {
+        $this->update($data);
+    }
+
+    /**
+     * @param array $data
+     * @return void
+     */
+    public function update(array $data)
+    {
+        parent::update($data);
+        $this->setUrl($data['url']);
+    }
 }
